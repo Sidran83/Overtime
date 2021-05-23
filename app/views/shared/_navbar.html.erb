@@ -7,6 +7,9 @@
   <li class="nav-item nav-link <%= active?(posts_path) %>">
     <%= link_to 'Time Entries', posts_path %>
   </li>
+  <li class="nav-item nav-link <%= active?(new_post_path) %>">
+    <%= link_to 'Add new Entry', new_post_path, id: 'new_link_from_nav' %>
+  </li>
   <li class="nav-item dropdown ml-md-auto">
      <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Account</a>
     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
