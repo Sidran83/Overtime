@@ -14,9 +14,9 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if @post.save
-      redirect_to @post, notice: 'Your post was created successfully'
+      redirect_to @post, success: 'Your post was created successfully'
     else
-      render :new
+      redirect_to new_post_path, danger: 'All fields must be filled'
     end
   end
 
@@ -28,15 +28,15 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Your post was edited successfully'
+      redirect_to @post, success: 'Your post was edited successfully'
     else
-      render :edit
+      redirect_to edit_post_path, danger: 'All fields must be filled'
     end
   end
 
   def destroy
     @post.delete
-    redirect_to posts_path, notice: 'Your post was deleted successfully'
+    redirect_to posts_path, success: 'Your post was deleted successfully'
   end
 
   private
